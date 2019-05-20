@@ -1,4 +1,5 @@
 # Exercise 2: using built-in string functions
+# RG Willhoft, 2019
 
 # Create a variable `lyric` that contains the text "I like to eat apples and 
 # bananas"

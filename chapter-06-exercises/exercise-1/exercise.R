@@ -1,4 +1,5 @@
 # Exercise 1: calling built-in functions
+# RG Willhoft, 2019
 
 # Create a variable `my_name` that contains your name
 my_name = "Robert Gordon Willhoft"

@@ -1,4 +1,5 @@
 # Exercise 1: creating and operating on vectors
+# RG Willhoft, 2019
 
 # Create a vector `names` that contains your name and the names of 2 people 
 # next to you. Print the vector.

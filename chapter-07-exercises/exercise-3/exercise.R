@@ -1,4 +1,5 @@
 # Exercise 3: vector practice
+# RG Willhoft, 2019
 
 # Create a vector `words` of 6 (or more) words.
 # You can Google for a "random word generator" if you wish!

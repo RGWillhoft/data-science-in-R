@@ -1,4 +1,5 @@
 # Exercise 4: functions and conditionals
+# RG Willhoft, 2019
 
 # Define a function `is_twice_as_long` that takes in two character strings, and 
 # returns whether or not (e.g., a boolean) the length of one argument is greater
