@@ -66,7 +66,14 @@ most_popular_genre
 # library (a "representative" artist for each).
 # Consider using multiple grouping operations. Note that you can only filter
 # for a `max()` value if you've collected the data into memory.
-
+genre_artist <- track_data_table %>%
+  filter( !is.na(composer) ) %>%
+  group_by(GenreId,composer) %>% 
+  count() %>% 
+  collect() # %>%
+  group_by(GenreId) %>%
+  select( n == max(n) )
+  arrange(-n)
 
 # Remember to disconnect from the database once you are done with it!
 dbDisconnect( chinook_sqlite )
