@@ -1,0 +1,1 @@
+nytimes_key <- "I7aQfKAqhXBaGQCS8U6HGongowGAGx2c"
