@@ -1,3 +1,7 @@
+# APIs in Action: Finding Cuban Food in Seattle
+# Based on example code in Programming Skills for Data Science by Freeman & Ross
+# Modified by RG Willhoft, 2019
+
 # Yelp API: Where is the best Cuban food in Seattle?
 library("httr")
 library("jsonlite")
