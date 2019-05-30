@@ -1,4 +1,9 @@
-# Yelp API: Where is the best Cuban food in Seattle?
+# Create a Google Map with the best sushi locations in Rochester, NY
+# Uses Yelp and Google APIs
+# Based on example code in Programming Skills for Data Science by Freeman & Ross
+# Modified by RG Willhoft, 2019
+
+# Yelp API: Where is the best Sushi food in Rochester?
 library("httr")
 library("jsonlite")
 library("dplyr")
@@ -6,7 +11,7 @@ library("ggrepel")
 library("ggmap")
 
 # Load API key (stored in another file)
-source("api_key.R")
+source("../../api_keys.R")
 
 # Construct your search query
 base_uri <- "https://api.yelp.com/v3/"
@@ -41,7 +46,7 @@ restaurants <- restaurants %>%
   mutate( rank = row_number() ) %>%
   mutate( name_and_rank = paste0( rank, ". ", name ) )
 
-# Create a base layer for the map (Google Maps image of Seattle)
+# Create a base layer for the map (Google Maps image of Rochester)
 register_google( key = google_maps_key )
 base_map <- ggmap(get_map(location = "Rochester, NY", zoom = 11, scale = "auto", maptype = "roadmap", source = "google" ) )
 

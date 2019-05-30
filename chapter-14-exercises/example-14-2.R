@@ -6,7 +6,7 @@ library("ggrepel")
 library("ggmap")
 
 # Load API key (stored in another file)
-source("api_key.R")
+source("../../api_keys.R")
 
 # Construct your search query
 base_uri <- "https://api.yelp.com/v3/"
