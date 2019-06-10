@@ -1,0 +1,29 @@
+---
+title: "Movie Review - Exercise 18.1"
+author: "Rob Willhoft"
+date: "6/10/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+---
+
+```{r getreview, include=FALSE}
+movie_name <- "Dan in Real Life"
+source( 'exercise-18-1.R' )
+```
+
+# `r movie_name` Review
+
+Below is the summary about `r movie_name` from the New York Times API:
+
+> ## `r review_headline`
+>
+> `r review_summary` 
+>
+>  (_published `r review_date`_)
+
+[`r review_link_text`](`r review_link`)
