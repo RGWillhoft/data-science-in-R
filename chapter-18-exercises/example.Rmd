@@ -1,0 +1,119 @@
+---
+title: "Chapter 18 - Dynamic Reports with R Markdown"
+author: "Rob Willhoft"
+date: "6/7/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 18.2 - Integrating Markdown and **R** code
+
+### 18.2.1 - **R** Code Chunks
+
+Write normal **markdown** out her, then create a code block:
+
+```{r}
+# Execute R code in here
+course_number <- 201
+```
+
+Back to writing _markdown_ out here.
+
+```{r options_example, echo = FALSE, message = TRUE}
+# A code chunk named "options_example", with argument 'echo' assigned FALSE
+# and argument 'message' assigned TRUE
+course_number
+course_number <- course_number + 100
+course_number
+```
+
+### 18.2.2 - Inline Code
+
+For example:
+
+To calculate `3 + 4` insdie some text, you can use `` `3 + 4`  `` right in the _middle_.
+When you knit this text, `` `3 + 4`  `` would be replaced with the number `r 3 + 4`.
+
+So `course_number` has the value `r course_number`.
+
+## 18.3 - Rendering Data and Visualizations in Reports
+
+### 18.3.1 - Rendering Strings
+```{r raw_print_example, echo = FALSE}
+print("Hello world")
+```
+
+```{r stored_print_example, echo = FALSE}
+msg <- "**Hello world**"
+```
+
+Below is the message to see:
+
+`r msg`
+
+### 18.3.2 - Rendering Markdown Lists
+
+A list containing Markdown:
+
+```{r list_example, echo = FALSE}
+markdown_list <- "
+- Lions
+- Tigers
+- Bears
+- Oh my!
+"
+```
+
+`r markdown_list`
+
+```{r pasted_list_example, echo = FALSE}
+animals <- c("Lions", "Tigers", "Bears", "Oh my!")
+markdown_list <- paste( "-", animals, collapse = "\n" )
+```
+
+Here's the list:
+
+`r animals`
+
+And the Markdown list:
+
+`r markdown_list`
+
+### 18.3.3 - Rendering Tables
+
+```{r kable_example, echo = FALSE }
+library("knitr")
+
+letters <- c("a", "b", "c", "d")
+numbers <- 1:4
+df = data.frame( letters = letters, numbers = numbers )
+```
+
+Without **kable**:
+
+```{r df_print, echo = FALSE}
+df
+```
+
+With **kable**:
+
+```{r df_kable, echo = FALSE}
+kable( df )
+```
+
+### 18.3.4 - Rendering Plots
+
+```{r plot_example, echo = FALSE}
+library( "ggplot2" )
+
+ggplot( data = midwest ) +
+  geom_point(
+    mapping = aes( x = percollege, y = percadultpoverty, color = state )
+  ) +
+  scale_color_brewer( palette = "Set3" )
+```
+
+  )
