@@ -14,7 +14,14 @@ joined_data <- left_join(df, state_codes, by="state")
 # Compute the electoral votes per 100K people in each state
 joined_data <- joined_data %>% mutate(ratio = votes/population * 100000)
 
+# this is a test to see that the map is created correctly
+# build_map( joined_data, "population" )
+
 # Define server function
+app_server <- function(input, output) {
   
   # Render a plotly object that returns your map
-  
+  output$map <- renderPlotly({ 
+    return( build_map( joined_data, input$variable ) )
+  })
+}
