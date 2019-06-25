@@ -4,6 +4,7 @@ library("ggplot2")
 
 # Read data file
 income_growth <- read.csv("data/income_growth_1980-2014.csv")
+colnames(income_growth)[1] <- "Income.Percentile"  # Fix since first column name not read correctly from file (RGW)
 
 # Define a server function
 server <- function(input, output) {
